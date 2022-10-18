@@ -15,6 +15,8 @@ let count = 4;
 function App() {
   const [input, setInput] = useState("");
 
+  console.log(input);
+
   const handleUserInput = (input) => {
     // console.log("from App component", input);
     setInput(input);
