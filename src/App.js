@@ -1,29 +1,35 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "./components/Form";
 import TaskList from "./components/TaskList";
 
-// data
-const data = [
-  { key: 0, task: "HTML I" },
-  { key: 1, task: "CSS" },
-  { key: 2, task: "Responsive design" },
-  { key: 3, task: "Git" },
-];
-
-let count = 4;
+let newObj = [];
 
 function App() {
-  const [input, setInput] = useState("");
+  const [val, setVal] = useState([]);
 
-  console.log(input);
+  const fetchDataFromLocalStorage = () => {
+    const data1 = JSON.parse(localStorage.getItem("myData"))
+      ? JSON.parse(localStorage.getItem("myData"))
+      : [];
+    return data1;
+  };
 
   const handleUserInput = (input) => {
-    // console.log("from App component", input);
-    setInput(input);
-    count++;
-    if (input) data.push({ task: input, key: count });
-    console.log(data);
+    if (input) {
+      const data1 = fetchDataFromLocalStorage();
+      const len = data1.length;
+      const data2 = { task: input, key: len + 1 };
+      newObj = [...data1, data2];
+      setVal(newObj);
+      localStorage.setItem("myData", JSON.stringify(newObj));
+
+      console.log(localStorage.getItem("myData"));
+    }
   };
+  useEffect(() => {
+    const data1 = fetchDataFromLocalStorage();
+    setVal(data1);
+  }, []);
 
   return (
     <div className="App">
@@ -35,7 +41,8 @@ function App() {
                 <div className="card-body p-5">
                   <h6 className="mb-3">Awesome Todo List</h6>
                   <Form handleUserInput={handleUserInput}></Form>
-                  <TaskList data={data}></TaskList>
+                  {console.log(newObj)}
+                  <TaskList data={val}></TaskList>
                 </div>
               </div>
             </div>
