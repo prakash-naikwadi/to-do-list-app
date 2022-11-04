@@ -12,7 +12,7 @@ function ToDoList() {
   );
 
   const getUserInput = (input) => {
-    console.log(task);
+    // console.log(task);
     const taskItem = { task: input, id: uuidv4() };
     setTask((prevState) => [...prevState, taskItem]);
     localStorage.setItem("myData", JSON.stringify(task));
