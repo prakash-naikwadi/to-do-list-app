@@ -1,5 +1,7 @@
+import ToDoList from "./components/ToDoList";
+
 function App() {
-  return <div className="App"></div>;
+  return <ToDoList />;
 }
 
 export default App;
