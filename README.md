@@ -33,10 +33,10 @@ This is a To DO List App build using **HTML5, Bootstrap and React**.
 👉 Learn about `useState` hook and usage of it.  
 👉 Learn about `useEffect` hook and usage of it.  
 👉 Learn about `uuid` package for generating random string and used it for id.  
-👉 Learn about `localStorage` browser API and how to do CRUD operation on it.
-👉 Learn about passing data to child components using `props`.
-👉 Learn about passing data from child to parent components using `lifting state up` concept.
-👉 Learn about how to pu Bootstrap code into React.
+👉 Learn about `localStorage` browser API and how to do CRUD operation on it.  
+👉 Learn about passing data to child components using `props`.  
+👉 Learn about passing data from child to parent components using `lifting state up` concept.  
+👉 Learn about how to pu Bootstrap code into React.  
 👉 Learn about how to distribute our UI into different components.
 
 ## 📬 Connect With Me
